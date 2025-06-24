@@ -26,8 +26,8 @@ export class App {
   projects = [
     {
       title: 'LSREYES',
-      subtitle: 'App para download de imagens com o laser eye',
-      description: 'É possível adicionar o laser eye na imagem de preferencia e fazer o download, pode pagar por meio da Lightning.',
+      subtitle: 'App for downloading images with the laser eye',
+      description: 'You can add the laser eye to an image of your choice and download it, with payment via Lightning.',
       link: '#'
     },
     {
