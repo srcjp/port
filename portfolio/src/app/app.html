@@ -1,32 +1,41 @@
-<div class="min-h-screen bg-[#0b110d] text-white flex flex-col items-center justify-start py-8 space-y-8">
-  <div class="w-48 h-48 bg-gray-800 border-4 border-[#dc7612]"></div>
-  <h1 class="text-5xl font-bold text-[#bd3200] px-4 py-2">Your Name</h1>
-  <p class="text-xl text-[#c3aa72] -mt-4">Fullstack Developer</p>
+<main class="min-h-screen flex flex-col items-center bg-gray-900 text-gray-100 px-6 py-12">
+  <section class="flex flex-col items-center mb-12">
+    <div class="relative">
+      <img src="assets/avatar.png" alt="Seu rosto" class="w-40 h-40 rounded-full p-1 border-4 border-transparent bg-gradient-to-r from-primary to-secondary" />
+    </div>
+    <h1 class="mt-6 text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary via-orange-400 to-yellow-300">Your Name</h1>
+    <ngx-typed-js [strings]="typedStrings" typeSpeed="50" backSpeed="30" loop="true" class="mt-2 text-xl text-gray-400"></ngx-typed-js>
+  </section>
 
-  <div class="flex space-x-4">
-    <a href="https://www.linkedin.com/in/joao-furlan-software/" aria-label="LinkedIn"><img src="/assets/icons/linkedin.svg" class="w-8 h-8" /></a>
-    <a href="https://www.instagram.com/furlan.jp/" aria-label="Instagram"><img src="assets/icons/instagram.svg" class="w-8 h-8" /></a>
-    <a href="https://github.com/jpfurlan" aria-label="GitHub"><img src="assets/icons/github.svg" class="w-8 h-8" /></a>
-    <a href="https://x.com/jpgfurlan" aria-label="Twitter"><img src="assets/icons/twitter.svg" class="w-8 h-8" /></a>
-    <a href="https://www.youtube.com/@jp.furlan" aria-label="YouTube"><img src="assets/icons/youtube.svg" class="w-8 h-8" /></a>
+  <div class="flex space-x-4 mt-4">
+    <a *ngFor="let icon of socials" [href]="icon.link" [attr.aria-label]="icon.label" class="p-2 bg-gray-800 rounded-full hover:bg-primary hover:scale-110 transition-transform duration-200">
+      <img [src]="icon.svg" class="w-6 h-6" />
+    </a>
   </div>
   <div class="flex items-center space-x-2">
     <p class="text-[20px] text-[#bd3200]">email&#64;example.com</p>
     <a href="mailto:email@example.com" class="bg-[#bd3200] text-white px-2 py-1 rounded">Contact me</a>
   </div>
-  <h2 class="text-3xl mt-8">Projects</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-5xl px-4">
-    <div *ngFor="let project of projects" class="bg-[#c3aa72] text-[#fafafa] rounded-lg p-2 flex flex-col h-40 transition hover:ring-2 hover:ring-[#bd3200] hover:shadow-lg">
-      <h3 class="text-[24px] text-[#2c4d56] font-bold">{{ project.title }}</h3>
-      <h4 class="text-[16px]">{{ project.subtitle }}</h4>
-      <p class="text-[14px] flex-grow">{{ project.description }}</p>
-      <ng-container *ngIf="!project.comingSoon; else soon">
-        <a [href]="project.link" class="mt-2 bg-[#bd3200] text-white px-2 py-1 text-center">Access</a>
-      </ng-container>
-      <ng-template #soon>
-        <span class="mt-2 bg-[#bd3200] text-white px-2 py-1 text-center">Coming Soon</span>
-      </ng-template>
+
+  <h2 class="text-4xl font-semibold mt-12 mb-6" data-aos="fade-down">Projects</h2>
+
+  <ng-container *ngIf="projects?.length > 0; else noProjects">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl px-4">
+      <div *ngFor="let project of projects" class="bg-secondary text-gray-900 rounded-xl p-6 flex flex-col h-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300" data-aos="fade-up">
+        <h3 class="text-2xl font-bold mb-2">{{ project.title }}</h3>
+        <h4 class="text-lg text-gray-800 mb-4">{{ project.subtitle }}</h4>
+        <p class="text-base flex-grow">{{ project.description }}</p>
+        <a *ngIf="!project.comingSoon; else soonTpl" [href]="project.link" class="mt-4 inline-block bg-primary text-white px-4 py-2 rounded hover:bg-opacity-90">Access</a>
+        <ng-template #soonTpl>
+          <span class="mt-4 inline-block bg-primary text-white px-4 py-2 rounded opacity-80">Coming Soon</span>
+        </ng-template>
+      </div>
     </div>
-  </div>
+  </ng-container>
+  <ng-template #noProjects>
+    <p class="text-center text-gray-500 mt-8">Ainda não há projetos para exibir. Volte em breve! 🙂</p>
+  </ng-template>
+
   <footer class="mt-8 text-sm">Psalms 23:4 "Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me; your rod and your staff, they comfort me."</footer>
-</div>
+
+</main>
