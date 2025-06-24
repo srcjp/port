@@ -23,9 +23,9 @@ export class App {
 
   protected projects = [
     {
-      title: 'Project 1',
-      subtitle: 'Subtitle 1',
-      description: 'Description of project one.',
+      title: 'LSREYES',
+      subtitle: 'App para download de imagens com o laser eye',
+      description: 'É possível adicionar o laser eye na imagem de preferencia e fazer o download, pode pagar por meio da Lightning.',
       link: '#'
     },
     {
