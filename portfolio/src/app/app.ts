@@ -9,4 +9,25 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected title = 'portfolio';
+
+  protected projects = [
+    {
+      title: 'Project 1',
+      subtitle: 'Subtitle 1',
+      description: 'Description of project one.',
+      link: '#'
+    },
+    {
+      title: 'Project 2',
+      subtitle: 'Subtitle 2',
+      description: 'Description of project two.',
+      link: '#'
+    },
+    {
+      title: 'Coming Soon',
+      subtitle: 'Subtitle',
+      description: 'More projects on the way.',
+      comingSoon: true
+    }
+  ];
 }
