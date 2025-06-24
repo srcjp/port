@@ -19,7 +19,7 @@
 
   <h2 class="text-4xl font-semibold mt-12 mb-6" data-aos="fade-down">Projects</h2>
 
-  <ng-container *ngIf="projects?.length > 0; else noProjects">
+  <ng-container *ngIf="projects.length > 0; else noProjects">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl px-4">
       <div *ngFor="let project of projects" class="bg-secondary text-gray-900 rounded-xl p-6 flex flex-col h-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300" data-aos="fade-up">
         <h3 class="text-2xl font-bold mb-2">{{ project.title }}</h3>
