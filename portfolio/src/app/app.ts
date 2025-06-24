@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgxTypedJsModule],
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, NgxTypedJsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
