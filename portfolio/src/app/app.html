@@ -16,7 +16,7 @@
   </div>
 
   <div class="flex space-x-4 mt-4">
-    <a *ngFor="let icon of socials" [href]="icon.link" [attr.aria-label]="icon.label" class="p-2 bg-gray-800 rounded-full hover:scale-110 transition-transform duration-200">
+    <a *ngFor="let icon of socials" [href]="icon.link" [attr.aria-label]="icon.label" class="p-2 bg-gray-800 rounded-full hover:bg-primary hover:scale-110 transition-transform duration-200">
       <img [src]="icon.svg" class="w-6 h-6" />
     </a>
   </div>
