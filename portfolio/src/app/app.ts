@@ -28,7 +28,7 @@ export class App {
       title: 'LSREYES',
       subtitle: 'App for downloading images with the laser eye',
       description: 'You can add the laser eye to an image of your choice and download it, with payment via Lightning.',
-      link: '#'
+      link: 'https://www.lsreyes.com'
     },
     {
       title: 'Project 2',
