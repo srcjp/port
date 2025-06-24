@@ -9,11 +9,11 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
   styleUrl: './app.css'
 })
 export class App {
-  protected title = 'portfolio';
+  title = 'portfolio';
 
-  protected typedStrings = ['Fullstack Developer', 'Angular Lover', 'Bitcoin Enthusiast'];
+  typedStrings = ['Fullstack Developer', 'Angular Lover', 'Bitcoin Enthusiast'];
 
-  protected socials = [
+  socials = [
     { link: 'https://www.linkedin.com/in/joao-furlan-software/', svg: 'assets/icons/linkedin.svg', label: 'LinkedIn' },
     { link: 'https://www.instagram.com/furlan.jp/', svg: 'assets/icons/instagram.svg', label: 'Instagram' },
     { link: 'https://github.com/jpfurlan', svg: 'assets/icons/github.svg', label: 'GitHub' },
@@ -21,7 +21,7 @@ export class App {
     { link: 'https://www.youtube.com/@jp.furlan', svg: 'assets/icons/youtube.svg', label: 'YouTube' },
   ];
 
-  protected projects = [
+  projects = [
     {
       title: 'LSREYES',
       subtitle: 'App para download de imagens com o laser eye',
