@@ -13,7 +13,7 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
 export class App {
   title = 'portfolio';
 
-  typedStrings = ['Fullstack Developer', 'Angular Lover', 'Bitcoin Enthusiast'];
+  typedStrings = ['Fullstack Developer', 'Bitcoin Enthusiast', 'Eternal learner'];
 
   socials = [
     { link: 'https://www.linkedin.com/in/joao-furlan-software/', svg: 'assets/icons/linkedin.svg', label: 'LinkedIn' },

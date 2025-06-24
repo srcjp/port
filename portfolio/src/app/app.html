@@ -9,15 +9,16 @@
     </ngx-typed-js>
   </section>
 
+  <div class="flex items-center space-x-2">
+    <a href="mailto:jpfurlan@hotmail.com.br" class="bg-[#bd3200] text-white px-2 py-1 rounded">Contact me</a>
+  </div>
+
   <div class="flex space-x-4 mt-4">
     <a *ngFor="let icon of socials" [href]="icon.link" [attr.aria-label]="icon.label" class="p-2 bg-gray-800 rounded-full hover:bg-primary hover:scale-110 transition-transform duration-200">
       <img [src]="icon.svg" class="w-6 h-6" />
     </a>
   </div>
-  <div class="flex items-center space-x-2">
-    <p class="text-[20px] text-[#bd3200]">jpfurlan&#64;hotmail.com.br</p>
-    <a href="mailto:jpfurlan@hotmail.com.br" class="bg-[#bd3200] text-white px-2 py-1 rounded">Contact me</a>
-  </div>
+
 
   <h2 class="text-4xl font-semibold mt-12 mb-6" data-aos="fade-down">Projects</h2>
 
