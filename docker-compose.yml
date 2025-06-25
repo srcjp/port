@@ -1,19 +1,17 @@
+version: '3.8'
+
 services:
   web:
-    build: .
-    restart: always
-    ports:
-      - '80:80'
-      - '443:443'
-    volumes:
-      - ./data/certbot/www:/var/www/certbot
-      - ./data/letsencrypt:/etc/letsencrypt
-  certbot:
-    image: certbot/certbot
-    volumes:
-      - ./data/certbot/www:/var/www/certbot
-      - ./data/letsencrypt:/etc/letsencrypt
-    command: >-
-      certonly --webroot --webroot-path=/var/www/certbot
-      --email jpfurlan@hotmail.com.br --agree-tos --no-eff-email
-      -d jpfurlan.dev -d www.jpfurlan.dev
+    image: port-web # ou build: . se quiser rebuildar local
+    expose:
+      - '80'
+    environment:
+      VIRTUAL_HOST: jpfurlan.dev,www.jpfurlan.dev
+      LETSENCRYPT_HOST: jpfurlan.dev,www.jpfurlan.dev
+      LETSENCRYPT_EMAIL: jpfurlan@hotmail.com.br
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
