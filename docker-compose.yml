@@ -1,14 +1,16 @@
 version: '3.8'
-
 services:
-  web:
-    image: port-web # ou build: . se quiser rebuildar local
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
     expose:
-      - '80'
+      - '80' # porta interna do nginx
     environment:
       VIRTUAL_HOST: jpfurlan.dev,www.jpfurlan.dev
       LETSENCRYPT_HOST: jpfurlan.dev,www.jpfurlan.dev
       LETSENCRYPT_EMAIL: jpfurlan@hotmail.com.br
+    restart: unless-stopped
     networks:
       - proxy
 
