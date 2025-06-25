@@ -14,7 +14,7 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # copia os arquivos de build Angular para o html
-COPY --from=build /app/portfolio/dist/portfolio /usr/share/nginx/html
+COPY --from=build /app/portfolio/dist/portfolio/browser /usr/share/nginx/html
 
 # sobrescreve o default.conf do Nginx
 COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
