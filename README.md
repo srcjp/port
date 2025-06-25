@@ -12,6 +12,7 @@ necessários para publicá-lo usando Docker e Nginx com SSL.
    sh get-docker.sh
    sudo usermod -aG docker $USER
    ```
+
    Efetue logout e login novamente para aplicar a permissão do grupo.
 
 2. **Instalação do Docker Compose**
@@ -29,20 +30,20 @@ necessários para publicá-lo usando Docker e Nginx com SSL.
 2. No diretório do projeto, execute o build das imagens:
 
    ```bash
-   docker compose build
+   sudo docker compose build
    ```
 
 3. Suba o contêiner do Nginx:
 
    ```bash
-   docker compose up -d web
+   sudo docker compose up -d web
    ```
 
 4. Obtenha o certificado SSL (ajuste o e-mail conforme desejado):
 
    ```bash
-   docker compose run --rm certbot
-   docker compose exec web nginx -s reload
+   sudo docker compose run --rm certbot
+   sudo docker compose exec web nginx -s reload
    ```
 
 Para renovação periódica, agende:
