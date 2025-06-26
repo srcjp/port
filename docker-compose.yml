@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     expose:
-      - '80' # porta interna do nginx
+      - '80'
     environment:
       VIRTUAL_HOST: jpfurlan.dev,www.jpfurlan.dev
       LETSENCRYPT_HOST: jpfurlan.dev,www.jpfurlan.dev
