@@ -31,9 +31,9 @@ export class App {
       link: 'https://www.lsreyes.com'
     },
     {
-      title: 'Project 2',
-      subtitle: 'Subtitle 2',
-      description: 'Description of project two.',
+      title: 'Festas Juninas Map',
+      subtitle: 'Mapa centralizador de informações de feiras',
+      description: 'A centralized map of the main fairs and Festa Junina festivals in the Londrina region, with information about the attractions.',
       link: '#'
     },
     {
